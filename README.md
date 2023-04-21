@@ -26,22 +26,22 @@ Se ha implementado multithreading (tiempo de ejecución de ~25 segundos para 159
 ```
 pip install -r requirements.txt
 ```
+- También debe instalar el paquete pandas y json
 
 - El programa se puede ejecutar con alguno de los siguientes comandos (dependiendo de tu instalación de python):
 ```
-python fantasy_scraper.py
+python 0_SCRIPT.py
 ```
 ```
-python3 fantasy_scraper.py
+python3 0_SCRIPT.py
 ```
 ```
-py fantasy_scraper.py
+py 0_SCRIPT.py
 ```
-
-- Con los ajustes establecidos por defecto y se ejecutará mostrando por pantalla un progressBar de 0% a 100%. Ejemplo de ejecución para 1595 jugadores en API por defecto (~25 segundos):
+- Ejecutará un conjunto de scripts de manera secuencial:
+     · 1_Fantasy_scraper_JSON.py: con los ajustes establecidos por defecto, extrae datos creando carpetas data y players mientras muestra por pantalla un progressBar de 0% a 100%. Ejemplo de ejecución para 1595 jugadores en API por defecto (~25 segundos):
 
 <img src="https://github.com/alxgarci/marca-fantasy-api-scraper-updated/raw/master/img/ejecucion.gif" alt="ejemplo ejecucion"/>
-
 
 - Acepta algunos comandos al ejecutarlo, para más información
 ```
@@ -51,6 +51,12 @@ fantasy_scraper.py --help
 <img src="https://github.com/alxgarci/marca-fantasy-api-scraper-updated/raw/master/img/ex01.png"
      alt="Ejemplo comandos"/>
 </div>
+
+     · 2_JSON_CSV.py: convierte los JSON en data a CSV creando data_CSV
+     · 3_CSVplanos_XLSXlimpios.py: convierte texto de CSV plano a XSLX creando data_XLSX
+     · 4_XLSXcombinado.py: unifica todos XLSX limpios libro data_combinado que se guarda en carpeta principal. Reemplaza caracteres slug por names reales
+
+- Es importante no tener abiertos los excels generados mientras se ejecutan los scripts
 
 # Importado como libreria
 Se puede importar y usar como librería dentro de otro script:
